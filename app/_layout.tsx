@@ -7,13 +7,21 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+import { Amplify } from "aws-amplify";
+import { Authenticator, useAuthenticator, withAuthenticator } from "@aws-amplify/ui-react-native";
+import awsconfig from '../src/aws-exports';
+
+
+Amplify.configure(awsconfig);
+
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+function RootLayout() {
+  const colorScheme = 'dark';
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    ProductSansRegular: require('../assets/fonts/ProductSansRegular.ttf'),
   });
 
   useEffect(() => {
@@ -35,3 +43,5 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
+
+export default RootLayout;

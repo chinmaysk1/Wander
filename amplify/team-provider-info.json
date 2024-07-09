@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wander-dev-e8b25-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654413166:role/amplify-wander-dev-e8b25-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654413166:role/amplify-wander-dev-e8b25-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-wander-dev-e8b25-deployment",
+      "UnauthRoleName": "amplify-wander-dev-e8b25-unauthRole",
+      "StackName": "amplify-wander-dev-e8b25",
+      "StackId": "arn:aws:cloudformation:us-west-1:654654413166:stack/amplify-wander-dev-e8b25/5e10a650-3132-11ef-86ae-063b92e74caf",
+      "AmplifyAppId": "dx0ytdpwv65s"
+    },
+    "categories": {
+      "auth": {
+        "Wander": {}
+      }
+    }
+  }
+}
