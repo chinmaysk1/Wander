@@ -205,6 +205,19 @@ function App() {
     }
   };
 
+  const goToCurrentLocation = () => {
+    if (location) {
+      setRegion({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.1,
+        longitudeDelta: 0.1,
+      });
+    } else {
+      alert('Location not available');
+    }
+  };
+
   const handleSearch = () => {
     Geocoder.from(searchQuery)
       .then(json => {
@@ -234,19 +247,6 @@ function App() {
   const clearSearch = () => {
     setSearchQuery('');
     setMarker(null);
-  };
-
-  const goToCurrentLocation = () => {
-    if (location) {
-      setRegion({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1,
-      });
-    } else {
-      alert('Location not available');
-    }
   };
 
 

@@ -72,12 +72,13 @@ export default function Stats() {
                 console.error('Error fetching holes from S3:', error);
             } finally {
                 const uniqueHoles = filterUniqueHoles(holes);
+                console.log(uniqueHoles);
                 const areaDiscovered = (Math.PI * 0.621371 * 0.621371 * uniqueHoles.length); // pi*r^2 * number of holes, where r = 1km or 0.621371mi
                 const percentStateDiscovered = (areaDiscovered / stateSquareMiles) * 100;
             
                 setArea(parseFloat(areaDiscovered.toFixed(2)));
                 setPercentState(parseFloat(percentStateDiscovered.toFixed(4)));
-                console.log(area)
+                console.log(area);
             }
         };
 
@@ -185,9 +186,6 @@ export default function Stats() {
         fetchUserLocation();
     }, []);
 
-    useEffect(() => {
-        
-    }, []);
 
 
     const getMilesTravelledPerDay = (holes: any, selectedMonthYear: string) => {
@@ -314,7 +312,7 @@ export default function Stats() {
                     );
     
                     // Check if within 50 meters
-                    if (distance <= 500) {
+                    if (distance <= 1000) {
                         isUnique = false;
                         break;
                     }
