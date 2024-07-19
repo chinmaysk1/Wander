@@ -25,8 +25,8 @@ const darkMode = darkModeStyles;
 
 
 AWS.config.update({
-  accessKeyId: 'AKIAZQ3DRTFXO6ASRFCF',
-  secretAccessKey: '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',
+  accessKeyId: 'THIS_KEY_IS_HIDDEN',
+  secretAccessKey: 'THIS_KEY_IS_HIDDEN',
   region: 'us-west-1',
 });
 
